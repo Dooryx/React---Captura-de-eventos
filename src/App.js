@@ -3,23 +3,25 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div>
+      <form onSubmit={presion}>
+        <p>Ingrese texto:
+          <input type="text" name="texto"  id='texto'/>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          <input type="submit" value="Alerta" />
+        </p>
+      </form>
     </div>
   );
+}
+
+function presion(e) {
+  e.preventDefault();
+  const v1=String(e.target.texto.value);
+ 
+  const ver=v1;
+  alert('Dice :'+ver);
 }
 
 export default App;
